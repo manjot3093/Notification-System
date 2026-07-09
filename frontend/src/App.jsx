@@ -43,16 +43,65 @@ export default function App() {
       </header>
 
       <main className="app-main">
-        <h1>What happened while you weren't looking</h1>
+        <h1>Your creator deals, at a glance</h1>
         <p className="app-sub">
-          This is a minimal demo screen — the bell in the header is the whole feature.
-          Switch identities above to see tenant isolation in action, or fire a trigger
-          below and watch the badge update on the next poll (or reopen the panel).
+          Track outreach, replies, and team activity across your roster — the bell in
+          the header keeps you posted the moment something moves. Switch identities
+          above to see how each agency only sees its own activity, or fire a trigger
+          below to simulate a real event and watch the badge update on the next poll
+          (or reopen the panel).
         </p>
 
         <TriggerPanel identity={identity} />
       </main>
+
+      <CopyrightBadge />
     </div>
+  );
+}
+
+function CopyrightBadge() {
+  return (
+    <a
+      href="https://github.com/manjot3093/Notification-System"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="View source on GitHub"
+      style={{
+        position: 'fixed',
+        bottom: '20px',
+        right: '20px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px',
+        padding: '8px 14px',
+        borderRadius: '999px',
+        background: '#1a1a1a',
+        color: '#f5f5f5',
+        textDecoration: 'none',
+        fontSize: '13px',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
+        zIndex: 1000,
+      }}
+    >
+      <span
+        aria-hidden="true"
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '18px',
+          height: '18px',
+          borderRadius: '50%',
+          border: '1.5px solid #f5f5f5',
+          fontSize: '12px',
+          lineHeight: 1,
+        }}
+      >
+        ©
+      </span>
+      Made by Ankit Raj and Manjot Singh
+    </a>
   );
 }
 
