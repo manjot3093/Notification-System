@@ -1,52 +1,114 @@
 # Nova CRM — Tenant-Aware Notification System
 
-A full-stack CRM notification system with tenant isolation, user-specific notifications, tenant-wide notifications, real-time updates, and a React notification bell.
+A full-stack CRM notification system that demonstrates **tenant-aware notification delivery**, **real-time updates**, and **secure notification visibility** across organizations. The project was developed as part of a Full-Stack Placement Challenge and showcases end-to-end integration between the frontend, backend, database, and event triggers.
 
-# Step-by-Step Project Setup
+### 👨‍💻 Team
 
-## Step 1: Install Required Software
+* **Manjot Singh**
+* **Ankit Raj**
+
+**Amity University Jharkhand**
+
+---
+
+# ✨ Project Overview
+
+This project implements a complete notification pipeline where CRM events automatically generate notifications that are delivered only to the intended users within the correct tenant.
+
+### Key Highlights
+
+* 🔔 Notification Bell with unread badge
+* 🏢 Tenant-aware notification isolation
+* 👤 User-specific notifications
+* 👥 Tenant-wide notifications
+* ⚡ Real-time updates using Server-Sent Events (SSE)
+* 🔄 Polling fallback mechanism
+* 💾 SQLite database
+* 🧪 Automated backend tests
+* 🎯 Event-driven notification triggers
+
+---
+
+# 🚀 Quick Start
+
+## Option 1 — One Click Setup (Recommended)
+
+A setup script is included to simplify project installation.
+
+Simply double-click or Run file by just right click and run the file :
+
+```text
+Launch.bat
+```
+
+The script will automatically:
+
+* Install Backend dependencies
+* Install Frontend dependencies
+* Create required environment configuration
+* Start the Backend server
+* Start the Frontend server
+* Open the project in separate terminals
+
+After setup completes, open:
+
+```text
+Frontend
+http://localhost:5173
+
+Backend
+http://localhost:4000
+```
+
+This is the fastest way to run the project.
+
+---
+
+## Option 2 — Manual Installation
+
+### Step 1 — Install Requirements
 
 Install:
 
-* Node.js version 22.5 or above
+* Node.js 22.5 or later
 * Git
-* Visual Studio Code recommended
+* Visual Studio Code (Recommended)
 
-Check if Node.js and Git are installed:
+Verify installation:
 
 ```bash
 node -v
 git --version
 ```
 
-## Step 2: Clone the Project
+---
 
-Open PowerShell or Terminal and run:
+### Step 2 — Clone Repository
 
 ```bash
 git clone https://github.com/manjot3093/Notification-System.git
 cd Notification-System
 ```
 
-## Step 3: Open the Project in VS Code
+---
 
-Run:
+### Step 3 — Open Project
 
 ```bash
 code .
 ```
 
-If `code .` does not work, open VS Code manually and select:
+If the command is unavailable:
 
 ```text
 File → Open Folder → Notification-System
 ```
 
-## Step 4: Start the Backend
+---
 
-Open the first terminal in VS Code.
+### Step 4 — Start Backend
 
-Run:
+Open Terminal 1
 
 ```bash
 cd Backend
@@ -54,290 +116,211 @@ npm install
 npm start
 ```
 
-Backend runs on:
+Backend runs on
 
 ```text
 http://localhost:4000
 ```
 
-The backend creates the SQLite database automatically at:
+The SQLite database is automatically created inside:
 
 ```text
 Backend/data/notifications.db
 ```
 
-## Step 5: Start the Frontend
+---
 
-Open a second terminal in VS Code.
+### Step 5 — Start Frontend
 
-Go to the project root first:
-
-```bash
-cd "path-to-your-project/Notification-System"
-```
-
-Then run:
+Open Terminal 2
 
 ```bash
 cd Frontend/Notification_System_Frontend
+
 npm install
+
 copy .env.example .env
+
 npm run dev
 ```
 
-For Mac/Linux, use:
+For Linux/macOS:
 
 ```bash
 cp .env.example .env
 ```
 
-Frontend runs on:
+Frontend runs on
 
 ```text
 http://localhost:5173
 ```
 
-Open this URL in the browser.
+---
 
-## Step 6: Test the Notification Bell
+### Step 6 — Run Backend Tests
 
-1. Open `http://localhost:5173`.
-2. Select a user from the **Viewing as** dropdown.
-3. Click the notification bell.
-4. Check the unread notification count.
-5. Click a notification to mark it as read.
-6. Click **Mark all as read** to mark all visible notifications as read.
-7. Click **Invite Team Member** to create a tenant-wide notification.
-8. Click **Simulate Creator Reply** to create a personal notification.
-9. Switch users and tenants to check who can see each notification.
-
-## Step 7: Run Backend Tests
-
-Open a third terminal.
-
-Run:
+Open another terminal.
 
 ```bash
 cd Backend
 npm test
 ```
 
-The tests verify:
+The automated tests verify:
 
 * Tenant isolation
-* Unread count isolation
-* Mark one notification as read
-* Mark all notifications as read
-* Protection from notification ID guessing
+* Notification visibility
+* Unread count
+* Mark Read APIs
+* Mark All Read API
 * Trigger pipeline
-* SSE real-time notification visibility
+* SSE notification delivery
 
-# Project Features
+---
 
-* Notification bell with unread badge
+# 📌 Project Features
+
+* Notification Bell with unread badge
 * Notification dropdown panel
-* Mark one notification as read
+* Mark individual notification as read
 * Mark all notifications as read
 * Tenant-wide notifications
 * User-specific notifications
-* Real-time updates using Server-Sent Events
-* Polling fallback every 20 seconds
-* SQLite database
-* Seed data
-* Demo event triggers
-* Tenant isolation tests
+* Server-Sent Events (Real-time updates)
+* Automatic polling fallback
+* Event-driven notification creation
+* Secure tenant isolation
+* SQLite persistent storage
+* Seed data for demonstration
+* Automated backend testing
 
-# Technology Used
+---
+
+# 🛠 Technology Stack
+
+### Frontend
+
+* React.js
+* Vite
+* CSS3
+
+### Backend
 
 * Node.js
 * Express.js
+
+### Database
+
 * SQLite
-* React.js
-* Vite
-* Server-Sent Events
-* Node.js test runner
 
-# Project Architecture
+### Real-Time Communication
 
-```text
-React Frontend
-      |
-      | Sends API request with tenant ID and user ID
-      v
-Express Backend
-      |
-      | Reads tenant and user identity
-      v
-Notification Service
-      |
-      | Creates, lists, counts, and updates notifications
-      v
-SQLite Database
-      |
-      | Saves notification data
-      v
-SSE Stream and Polling
-      |
-      v
-Notification Bell Updates Automatically
-```
+* Server-Sent Events (SSE)
 
-# Notification Flow
+### Testing
+
+* Node.js Test Runner
+
+---
+
+# 🏗 System Architecture
 
 ```text
-Step 1: A CRM event happens.
-Example: A creator replies to an outreach message.
-
-Step 2: Trigger endpoint receives the event.
-
-Step 3: Trigger calls Notification Service.
-
-Step 4: Notification Service saves notification in SQLite database.
-
-Step 5: Backend sends real-time SSE event.
-
-Step 6: Allowed frontend user receives the event.
-
-Step 7: Notification bell badge and list update automatically.
+                    CRM Event
+                        │
+                        ▼
+             Trigger / Webhook Endpoint
+                        │
+                        ▼
+             Notification Service Layer
+                        │
+        ┌───────────────┴───────────────┐
+        │                               │
+        ▼                               ▼
+ SQLite Database               SSE Event Stream
+        │                               │
+        └───────────────┬───────────────┘
+                        ▼
+              React Notification Bell
+                        │
+                        ▼
+         Correct Tenant & User Receives Notification
 ```
 
-# Notification Visibility Rules
+---
 
-| Notification Type                | Who Can See It?                           |
-| -------------------------------- | ----------------------------------------- |
-| Tenant-wide notification         | Every user in the same tenant             |
-| User-specific notification       | Only the selected user in the same tenant |
-| Notification from another tenant | Cannot be seen                            |
+# 🌐 API Endpoints
 
-Example:
+All notification endpoints use:
 
 ```text
-Tenant t1: Nova Talent
-Users: u1 and u2
-
-Tenant t2: Bright Star Agency
-User: u3
+X-Tenant-Id
+X-User-Id
 ```
 
-Tenant-wide notification:
+| Method | Endpoint                      | Description                      |
+| ------ | ----------------------------- | -------------------------------- |
+| POST   | `/notifications`              | Create notification              |
+| GET    | `/notifications`              | Fetch visible notifications      |
+| GET    | `/notifications/unread-count` | Get unread notification count    |
+| GET    | `/notifications/stream`       | Real-time notification stream    |
+| PATCH  | `/notifications/:id/read`     | Mark notification as read        |
+| PATCH  | `/notifications/read-all`     | Mark all notifications as read   |
+| POST   | `/webhooks/member-invited`    | Trigger tenant-wide notification |
+| POST   | `/webhooks/creator-replied`   | Trigger user notification        |
+| POST   | `/webhooks/report-ready`      | Trigger report notification      |
 
-```text
-tenantId: t1
-userId: null
-message: Sarah joined Nova Talent
+---
 
-Visible to:
-✓ u1 from t1
-✓ u2 from t1
-✗ u3 from t2
-```
+# 🌿 Git Workflow
 
-Personal notification:
-
-```text
-tenantId: t1
-userId: u1
-message: Priya replied to your outreach
-
-Visible to:
-✓ u1 from t1
-✗ u2 from t1
-✗ u3 from t2
-```
-
-# API Endpoints
-
-All notification APIs use:
-
-```text
-X-Tenant-Id: t1
-X-User-Id: u1
-```
-
-| Method | Endpoint                      | Purpose                                |
-| ------ | ----------------------------- | -------------------------------------- |
-| POST   | `/notifications`              | Create notification                    |
-| GET    | `/notifications`              | Get visible notifications              |
-| GET    | `/notifications/unread-count` | Get unread count                       |
-| GET    | `/notifications/stream`       | Get real-time updates                  |
-| PATCH  | `/notifications/:id/read`     | Mark one notification as read          |
-| PATCH  | `/notifications/read-all`     | Mark all visible notifications as read |
-| POST   | `/webhooks/member-invited`    | Create tenant-wide notification        |
-| POST   | `/webhooks/creator-replied`   | Create personal notification           |
-| POST   | `/webhooks/report-ready`      | Create report-ready notification       |
-
-# Team Git Workflow
-
-## Step 1: Get Latest Code
-
-Before starting work:
+### 1. Get Latest Code
 
 ```bash
 git checkout main
 git pull origin main
 ```
 
-## Step 2: Create Your Own Branch
+### 2. Create a Feature Branch
 
 ```bash
 git checkout -b your-feature-name
 ```
 
-Example:
+Example
 
 ```bash
-git checkout -b docs-readme
+git checkout -b frontend-ui-update
 ```
 
-## Step 3: Make Changes
+### 3. Develop Your Feature
 
-Edit your assigned files and test your work.
+Make changes and test the project.
 
-## Step 4: Check Changes
+### 4. Check Changes
 
 ```bash
 git status
 ```
 
-## Step 5: Add and Commit Changes
+### 5. Commit Changes
 
 ```bash
 git add .
-git commit -m "Update README documentation"
+git commit -m "Describe your changes"
 ```
 
-## Step 6: Push Your Branch
+### 6. Push Branch
 
 ```bash
-git push -u origin docs-readme
+git push -u origin your-feature-name
 ```
 
-## Step 7: Create Pull Request
-
-Open GitHub and create a Pull Request:
+### 7. Create Pull Request
 
 ```text
-docs-readme → main
+your-feature-name → main
 ```
 
-## Important Rule
-
-Do not commit directly to `main`.
-
-```text
-main = final stable project
-your branch = your work area
-```
-
-Only merge tested Pull Requests into `main`.
-
-# Future Improvements
-
-* Email notifications
-* Browser push notifications
-* Notification preferences
-* PostgreSQL production database
-* Docker deployment
-* Better SSE reconnect support
-* Playwright frontend tests
-* Cursor-based pagination
+> **Important:** Never commit directly to the `main` branch. Always create a feature branch, push it, and open a Pull Request after testing.

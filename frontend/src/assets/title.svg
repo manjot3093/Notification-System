@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDFB"/>
+      <stop offset="100%" stop-color="#FFF2EA"/>
+    </linearGradient>
+
+    <linearGradient id="bell" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7B08A"/>
+      <stop offset="100%" stop-color="#E98D6D"/>
+    </linearGradient>
+
+    <linearGradient id="badge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB392"/>
+      <stop offset="100%" stop-color="#E96F54"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#D79A7C" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <!-- Glass Background -->
+  <rect
+    x="4"
+    y="4"
+    width="56"
+    height="56"
+    rx="16"
+    fill="url(#bg)"
+    stroke="#F3D9CB"
+    stroke-width="2"
+  />
+
+  <!-- Glass Shine -->
+  <path
+    d="M12 14
+       Q32 6 52 14
+       L52 18
+       Q32 12 12 18Z"
+    fill="white"
+    opacity=".45"
+  />
+
+  <!-- Bell -->
+  <g filter="url(#shadow)">
+    <path
+      d="M32 18
+         C25 18 20 23 20 31
+         V39
+         L17 44
+         H47
+         L44 39
+         V31
+         C44 23 39 18 32 18Z"
+      fill="url(#bell)"
+    />
+
+    <rect
+      x="19"
+      y="42"
+      width="26"
+      height="4"
+      rx="2"
+      fill="#E98D6D"
+    />
+
+    <circle
+      cx="32"
+      cy="49"
+      r="3"
+      fill="#CF6E51"
+    />
+  </g>
+
+  <!-- Notification Badge -->
+  <circle
+    cx="46"
+    cy="18"
+    r="8"
+    fill="url(#badge)"
+    stroke="#FFFDFB"
+    stroke-width="2"
+  />
+
+  <text
+    x="46"
+    y="21"
+    text-anchor="middle"
+    font-size="9"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="700"
+    fill="white"
+  >
+    1
+  </text>
+</svg>
